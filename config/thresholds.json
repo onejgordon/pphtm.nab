@@ -27,6 +27,20 @@
             "threshold": 0.5126953125
         }
     },
+    "pphtm": {
+        "reward_low_FN_rate": {
+            "score": -2303.0988684474332,
+            "threshold": 0.9507812500000005
+        },
+        "reward_low_FP_rate": {
+            "score": -4689.733964829537,
+            "threshold": 0.9507812500000005
+        },
+        "standard": {
+            "score": -2297.0988684474332,
+            "threshold": 0.9507812500000005
+        }
+    },
     "random": {
         "reward_low_FN_rate": {
             "score": -45.889252239141754,
