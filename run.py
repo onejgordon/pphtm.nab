@@ -44,7 +44,7 @@ def getDetectorClassConstructors(detectors):
 
 
 def main(args):
-  
+
   root = os.path.dirname(os.path.realpath(__file__))
 
   numCPUs = int(args.numCPUs) if args.numCPUs is not None else None
@@ -54,7 +54,7 @@ def main(args):
   resultsDir = os.path.join(root, args.resultsDir)
   profilesFile = os.path.join(root, args.profilesFile)
   thresholdsFile = os.path.join(root, args.thresholdsFile)
-  
+
   runner = Runner(dataDir=dataDir,
                   labelPath=windowsFile,
                   resultsDir=resultsDir,
@@ -109,7 +109,7 @@ if __name__ == "__main__":
                     help="Normalize the final scores",
                     default=False,
                     action="store_true")
-                    
+
   parser.add_argument("--skipConfirmation",
                     help="If specified will skip the user confirmation step",
                     default=False,
@@ -128,14 +128,14 @@ if __name__ == "__main__":
                     default=os.path.join("labels", "combined_windows.json"),
                     help="JSON file containing ground truth labels for the "
                          "corpus.")
-                         
+
   parser.add_argument("-d", "--detectors",
                     nargs="*",
                     type=str,
                     default=["null", "numenta", "random", "skyline"],
                     help="Comma separated list of detector(s) to use, e.g. "
                          "null,numenta")
-                    
+
   parser.add_argument("-p", "--profilesFile",
                     default=os.path.join("config", "profiles.json"),
                     help="The configuration file to use while running the "
@@ -152,7 +152,7 @@ if __name__ == "__main__":
                     "benchmark. If not specified all CPUs will be used.")
 
   args = parser.parse_args()
-  
+
   if (not args.detect
       and not args.optimize
       and not args.score
@@ -173,8 +173,9 @@ if __name__ == "__main__":
     from nab.detectors.numenta.numenta_detector import NumentaDetector
   from nab.detectors.skyline.skyline_detector import SkylineDetector
   from nab.detectors.random.random_detector import RandomDetector
+  from nab.detectors.pphtm.pphtm_detector import PphtmDetector
   from nab.detectors.null.null_detector import NullDetector
 
   if args.skipConfirmation or checkInputs(args):
     main(args)
-    
+

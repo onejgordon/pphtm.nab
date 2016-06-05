@@ -1,11 +1,7 @@
-
 .DS_Store
 *.pyc
-
 data_test/
 deprecated/
 nab.egg-info/
-
-# Generated files
-
-*resultsSummary*
+build/
+results/
